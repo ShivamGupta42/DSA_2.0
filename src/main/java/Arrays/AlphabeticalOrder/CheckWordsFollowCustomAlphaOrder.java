@@ -31,9 +31,12 @@ public class CheckWordsFollowCustomAlphaOrder {
 			}
 		}
 
+		//bigger length word comes second
+		//abcd abcde -> abcde should come later
 		if (s1.length() > s2.length()) {
 			return false;
 		}
+
 		return true;
 	}
 }
