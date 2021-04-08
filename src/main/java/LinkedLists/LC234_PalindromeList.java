@@ -76,4 +76,53 @@ public class LC234_PalindromeList {
 		System.out.println(obj.isPalindrome(l));
 	}
 
+
+	public boolean isPalindrome2(ListNode head) {
+
+		//find middle
+		if(head==null){
+			return false;
+		}
+
+
+		ListNode slow = head;
+		ListNode fast= head;
+
+		while(fast!=null&&fast.next!=null){
+			slow=slow.next;
+			fast=fast.next.next;
+		}
+
+
+		//find count of nodes
+		ListNode cptr=head;
+		int nCount=0;
+
+		while(cptr!=null){
+			nCount++;
+			cptr=cptr.next;
+		}
+
+		//check for palindrome
+		ListNode left = head;
+		ListNode right=null;
+		if(nCount%2!=0){
+			right=slow.next;
+		}else{
+			right=slow;
+		}
+
+		StringBuilder sb1 = new StringBuilder();
+		StringBuilder sb2 = new StringBuilder();
+
+		while(right!=null){
+			sb1.append(left.val+"");
+			sb2.append(right.val+"");
+			left=left.next;
+			right=right.next;
+		}
+
+		return sb1.toString().equals(sb2.reverse().toString());
+	}
+
 }
