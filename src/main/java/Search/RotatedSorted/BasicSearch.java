@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class BasicSearch {
-	// DO NOT MODIFY THE LIST. IT IS READ ONLY
+
 	public int search(final List<Integer> A, int B) {
 		if (A == null || A.size() < 1) {
 			return -1;

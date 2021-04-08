@@ -15,7 +15,22 @@ public class GC_Feature4 {
         System.out.println(Arrays.deepToString(insertMeeting(meetingTimes, newMeeting)));
     }
 
-    private static Object[] insertMeeting(int[][] meetingTimes, int[] newMeeting) {
+    private static int[][] insertMeeting(int[][] meetingTimes, int[] newMeeting) {
+        int[][] updatedCalendar = addNewMeeting(meetingTimes,newMeeting);
+        return ConsolidateAllMeetings(updatedCalendar);
+    }
+
+    private static int[][] ConsolidateAllMeetings(int[][] updatedCalendar) {
+        return null;
+    }
+
+    private static int[][] addNewMeeting(int[][] meetingTimes, int[] newMeeting) {
+
+        for(int i=0;i< meetingTimes.length;i++){
+            if(newMeeting[1]>meetingTimes[i][0]&&newMeeting[0]<meetingTimes[i][1]){
+
+            }
+        }
         return null;
     }
 
